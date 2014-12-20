@@ -1,7 +1,10 @@
 #div_title {
-    width: 100%;
+    width: 1280px;
     height: 80px;
-    background-color: white;
+    background-image: url("/resources/title.jpeg");
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 #div_title_left {
@@ -21,48 +24,169 @@
 }
 
 #label1 {
-    font-family: Verdana;
-    font-size: 40px;
+    font: bold 40px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;
+    color: white;
+    text-shadow: 0 0 20px #0074ff;
+    line-height: 55px;
+
 }
 
 #label2 {
     font-family: "Andale Mono";
+    color: #a009ff;
+    text-shadow: #ffc715 0 1px 0;
     font-size: 18px;
+    line-height: 20px;
 }
 
 #div_box {
-    width: 100%;
-    height: 40px;
-    background-color: dodgerblue;
+    width: 1280px;
+    height: 35px;
+    border-top: groove;
+    border-top-width: 2px;
+
     position: absolute;
     top: 80px;
     left: 0%;
 }
 
+#div_checkbox {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+}
+
+#div_checkbox_check1 {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#div_checkbox_check2 {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 25%;
+}
+
+#div_checkbox_check3 {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+}
+
+.title_font {
+    font-family: 'Andale Mono', Courier, monospace;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    color: black;
+}
+
+.title_font:hover {
+    box-shadow: inset 0 0 10px thistle;
+}
+
 #div_body {
-    width: 100%;
-    height: 600px;
-    background-color: white;
+    width: 1280px;
+    height: 617px;
+    background-image: url("/resources/background.jpg");
+    border-top: groove;
+    border-top-width: 2px;
+    position: absolute;
+    top: 118px;
+    left: 0px;
 }
 
 #div_body_inner {
     width: 88%;
-    height: 610px;
-    background-color: palegreen;
+    height: 100%;
+    background-color: transparent;
     position: absolute;
-    top: 120px;
+    top: 0px;
     left: 6%;
 }
 
 #div_body_inner_left {
-    width: 20%;
+    width: 15%;
     height: 100%;
-    background-color: purple;
-    float: left;
-    z-index: 3;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.left_link_1 {
+    font-family: Verdana;
+    font-size: 22px;
+    line-height: 30px;
+    list-style-type: none;
+    position: relative;
+    left: 10px;
+}
+
+.left_link_href:hover {
+    cursor: pointer;
+}
+
+.left_link_2 {
+    font-family: Verdana;
+    font-size: 18px;
+    line-height: 30px;
+    list-style-type: none;
+    position: relative;
+    left: 50px;
+}
+
+.left_link_3 {
+    font-family: Verdana;
+    font-size: 22px;
+    line-height: 30px;
+    list-style-type: none;
+    position: relative;
+    left: 10px;
+}
+
+.left_link_4 {
+    font-family: Verdana;
+    font-size: 18px;
+    line-height: 30px;
+    list-style-type: none;
+    position: relative;
+    left: 50px;
 }
 
 #div_body_inner_right {
+    width: 80%;
     height: 100%;
-    background-color: lightcoral;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    left: 15%;
+}
+
+a {
+    font-family: Verdana;
+    text-decoration:none;
+    color: transparent;
+    text-shadow: 0 0 1px #ff5700;
+}
+
+a:hover {
+    font-family: Verdana;
+    color: red;
+    text-decoration:none;
+}
+
+.title_link {
+    font-family: Verdana;
+    color: red;
+    text-decoration:none;
 }
