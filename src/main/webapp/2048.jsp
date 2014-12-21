@@ -3,7 +3,6 @@
   User: zhang_yao_wu1993
   Date: 14/12/20
   Time: 下午9:48
-  To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -18,7 +17,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 </head>
 <body>
-    <h1 id="return_mainpage"><a id="return_mainpage_link">回到首页</a></h1>
+    <h1 id="return_mainpage"><a id="return_mainpage_link" href="index.jsp">回到首页</a></h1>
     <header>
         <h1>2048</h1>
         <a id="new_game_button" href="javascript:newgame()">New Game</a>

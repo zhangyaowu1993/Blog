@@ -65,6 +65,7 @@ header p {
     background-color: #bbada0;
     border-radius: 10px;
     position: relative;
+    box-shadow: 7px 7px 5px #888888;
 }
 
 .grid {

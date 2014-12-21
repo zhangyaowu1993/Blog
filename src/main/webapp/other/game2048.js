@@ -1,7 +1,13 @@
+/**
+ * 2048 游戏 javascript
+ * @author by Zerur
+ */
+
 var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
 var canLogMessage = true;
+var req;
 
 $(document).ready(function() {
     newgame();
@@ -209,11 +215,20 @@ function noMove(board) {
 function gameover() {
     if(canLogMessage == true) {
         var name = window.prompt("Game Over 您的纪录是 : " + score + "   请留下你的尊姓大名 :");
-        var message = new XMLHttpRequest();
-        message.open("GET", "2048logging.jsp?name=" + name + "&score=" + score, true);
-        message.send();
+        req = new XMLHttpRequest();
+        req.open("GET", "2048logging.jsp?name=" + name + "&score=" + score, true);
+        req.onreadystatechange = callBack;
+        req.send();
     }
     canLogMessage = false;
+}
+
+function callBack() {
+    if(req.readyState == 4) {
+        if(req.status == 200) {
+            var key = req.responseText;
+        }
+    }
 }
 
 function showMoveAnimation(from_x, from_y, to_x, to_y) {
