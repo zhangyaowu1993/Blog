@@ -1,12 +1,14 @@
 var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
+var canLogMessage = true;
 
 $(document).ready(function() {
     newgame();
 });
 
 function newgame() {
+    canLogMessage = true;
     // 初始化棋盘
     init();
     // 生成数字
@@ -156,24 +158,32 @@ $(document).keydown(function(event) {
     switch(event.keyCode) {
         case 37 : // left
             if(moveLeft()) {
+                $('embed').remove();
+                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 38 : // up
             if(moveUp()) {
+                $('embed').remove();
+                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 39 : // right
             if(moveRight()) {
+                $('embed').remove();
+                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 40 : // down
             if(moveDown()) {
+                $('embed').remove();
+                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
@@ -197,7 +207,13 @@ function noMove(board) {
 }
 
 function gameover() {
-    var name = window.prompt("Game Over 您的纪录是 : " + score + "   请留下你的尊姓大名 :");
+    if(canLogMessage == true) {
+        var name = window.prompt("Game Over 您的纪录是 : " + score + "   请留下你的尊姓大名 :");
+        var message = new XMLHttpRequest();
+        message.open("GET", "2048logging.jsp?name=" + name + "&score=" + score, true);
+        message.send();
+    }
+    canLogMessage = false;
 }
 
 function showMoveAnimation(from_x, from_y, to_x, to_y) {

@@ -1,3 +1,25 @@
+#return_mainpage {
+    font-size: 15px;
+    float: left;
+}
+
+#return_mainpage_link {
+    font-family: Verdana;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0 0 1px #9861ff;
+    text-decoration:none;
+}
+
+#return_mainpage_link:hover {
+    cursor: pointer;
+    font-family: Verdana;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0 0 1px #6c42ff;
+    text-decoration:none;
+}
+
 header {
     display: block;
     margin: 0 auto;

@@ -15,8 +15,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     <script type="text/javascript" src="other/jquery-2.1.3.js"></script>
     <script type="text/javascript" src="other/game2048.js"></script>
     <link href="other/game2048.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+    <h1 id="return_mainpage"><a id="return_mainpage_link">回到首页</a></h1>
     <header>
         <h1>2048</h1>
         <a id="new_game_button" href="javascript:newgame()">New Game</a>
