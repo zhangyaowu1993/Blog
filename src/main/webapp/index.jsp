@@ -43,7 +43,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                         <li class="left_link_2"><a href="index.jsp">日志</a></li>
                         <li class="left_link_2"><a href="index.jsp">链接</a></li>
                         <li class="left_link_3"><a id="left_link_href_3" class="left_link_href">游戏</a></li>
-                        <li class="left_link_4"><a href="index.jsp">2048</a></li>
+                        <li class="left_link_4"><a href="2048.jsp">2048</a></li>
                     </ul>
                 </div>
                 <div id="div_body_inner_right">
