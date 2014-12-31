@@ -17,39 +17,55 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <link href="other/index.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div id="div_title">
-            <div id="div_title_left">
-                <label id="label1">张耀武的个人网站</label>
-                <br/>
-                <label id="label2">Enjoy right now</label>
-            </div>
-            <div id="div_title_right">
-
-            </div>
-        </div>
-        <div id="div_box">
-            <div id="div_checkbox">
-                <div id="div_checkbox_check1" class="title_font"><a class="title_link" href="index.jsp">首页</a></div>
-                <div id="div_checkbox_check2" class="title_font"><a class="title_link" href="index.jsp">编程</a></div>
-                <div id="div_checkbox_check3" class="title_font"><a class="title_link" href="index.jsp">作者</a></div>
-            </div>
-        </div>
-        <div id="div_body">
-            <div id="div_body_inner">
-                <div id="div_body_inner_left">
-                    <ul>
-                        <li class="left_link_1"><a id="left_link_href_1" class="left_link_href">简介</a></li>
-                        <li class="left_link_2"><a href="index.jsp">日志</a></li>
-                        <li class="left_link_2"><a href="index.jsp">链接</a></li>
-                        <li class="left_link_3"><a id="left_link_href_3" class="left_link_href">游戏</a></li>
-                        <li class="left_link_4"><a href="2048.jsp">2048</a></li>
-                    </ul>
+        <div id="background">
+            <div id="frame">
+                <div id="head">
+                    <div id="head_left">
+                        <div id="title">ZeRur Blog</div>
+                        <div id="menu">
+                            <div class="menu_div"><a class="main_font" href="/index.jsp">HOME</a></div>
+                        </div>
+                    </div>
+                    <div id="head_right">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div id="head_bottom"></div>
                 </div>
-                <div id="div_body_inner_right">
-
+                <div id="body">
+                    <div id="body_left">
+                        <div class="choose_box">
+                            <span class="choose_box_span" onclick="mainPage()">主页</span>
+                        </div>
+                        <div class="choose_box">
+                            <span class="choose_box_span">日志</span>
+                            <ul class="choose_box_ul">
+                                <li class="choose_box_li">spring</li>
+                                <li class="choose_box_li">summer</li>
+                            </ul>
+                        </div>
+                        <div class="choose_box">
+                            <span class="choose_box_span">游戏</span>
+                            <ul class="choose_box_ul">
+                                <li class="choose_box_li" onclick="game2048()">2048</li>
+                                <li class="choose_box_li">4096</li>
+                            </ul>
+                        </div>
+                        <div class="choose_box">
+                            <span class="choose_box_span">留言</span>
+                        </div>
+                        <div class="choose_box">
+                            <span class="choose_box_span">作者</span>
+                        </div>
+                    </div>
+                    <div id="body_right">
+                        <iframe id="iframe" src="mainpage.jsp" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div id="body_bottom"></div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>
+
+
+

@@ -15,4 +15,3 @@
 
     response.getWriter().write("<label>hello</label>");
 %>
-

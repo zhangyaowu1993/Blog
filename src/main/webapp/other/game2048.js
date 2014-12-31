@@ -46,11 +46,11 @@ function init() {
 }
 
 function getPosTop(i, j) {
-    return 20 + i * 120;
+    return 16 + i * 96;
 }
 
 function getPosLeft(i, j) {
-    return 20 + j * 120;
+    return 16 + j * 96;
 }
 
 function updateBoardView() {
@@ -62,24 +62,24 @@ function updateBoardView() {
             var this_number_cell = $('#number_cell' + i + '_' + j);
 
             if(board[i][j] == 0) {
-                this_number_cell.css("width", "0px");
-                this_number_cell.css("height", "0px");
-                this_number_cell.css("top", getPosTop(i, j) + 50);
-                this_number_cell.css("left", getPosLeft(i, j) + 50);
+                this_number_cell.css("width", "80px");
+                this_number_cell.css("height", "80px");
+                this_number_cell.css("top", getPosTop(i, j) + 0);
+                this_number_cell.css("left", getPosLeft(i, j) + 0);
             }
             else {
-                this_number_cell.css("width", "100px");
-                this_number_cell.css("height", "100px");
+                this_number_cell.css("width", "80px");
+                this_number_cell.css("height", "80px");
                 this_number_cell.css("top", getPosTop(i, j));
                 this_number_cell.css("left", getPosLeft(i, j));
                 this_number_cell.css("background-color", getNumberCellColor(board[i][j]));
                 this_number_cell.css("color", getNumberCellTextColor(board[i][j]));
                 this_number_cell.text(board[i][j]);
                 if(board[i][j] > 100) {
-                    this_number_cell.css("font-size", 39);
+                    this_number_cell.css("font-size", 32);
                 }
                 if(board[i][j] > 1000) {
-                    this_number_cell.css("font-size", 32);
+                    this_number_cell.css("font-size", 27);
                 }
             }
 
@@ -153,8 +153,8 @@ function showNumberWithAnimation(i, j, number) {
     this_show_number_cell.text(number);
 
     this_show_number_cell.animate( {
-        width: "100px",
-        height: "100px",
+        width: "80px",
+        height: "80px",
         top: getPosTop(i, j),
         left:getPosLeft(i, j)
     }, 50);

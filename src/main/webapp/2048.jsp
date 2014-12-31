@@ -17,9 +17,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 </head>
 <body>
-    <h1 id="return_mainpage"><a id="return_mainpage_link" href="index.jsp">回到首页</a></h1>
     <header>
-        <h1>2048</h1>
         <a id="new_game_button" href="javascript:newgame()">New Game</a>
         <p>Score : <span id="score">0</span></p>
         <div id="container">
