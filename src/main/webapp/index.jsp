@@ -34,11 +34,13 @@
         <div class="wrap">
             <div class="nav">
                 <div class="nav_left">
-                    <ul>
-                        <li><a href="#">首页</a></li>
-                    </ul>
+                    <span><a href="#">ZeRur的个人主页</a></span>
+                    <span class="nav_left_process">[Girl Friend] 0.001/1</span>
+                    <span class="nav_left_process">[Program Manager] 0.01/1</span>
+                    <span class="nav_left_process">[Graduate] 0.8/1</span>
                 </div><%--end nav_left--%>
                 <div class="nav_right">
+                    <span>如果你喜欢本网页 点个<a href="#">赞</a></span>
                 </div><%--end nav_right--%>
             </div><%--end nav--%>
 
@@ -84,7 +86,6 @@
                         </li>
                         <li>
                             <a href="#" date="submit">
-
                                 <span class="button_line button_line_top"></span>
                                 <span class="button_line button_line_right"></span>
                                 <span class="button_line button_line_bottom"></span>

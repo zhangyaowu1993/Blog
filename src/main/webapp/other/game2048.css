@@ -4,6 +4,7 @@ header {
     height: 555px;
     text-align: center;
     background-color: transparent;
+    margin: 0px auto;
 }
 
 header h1 {
@@ -18,14 +19,12 @@ header #new_game_button {
     display: block;
     width: 80px;
     padding: 10px 10px;
+    margin: 10px auto;
     background-color: #8f7a66;
     font-family: Verdana;
     border-radius: 10px;
     color: white;
     text-decoration: none;
-    position: relative;
-    left: 8%;
-    top: 35%;
 }
 
 header #new_game_button:hover {
@@ -39,8 +38,7 @@ header p {
     width: 190px;
     font-family: Verdana;
     font-size: 22px;
-    margin: 20px 0px;
-    position: relative;
+    margin: 20px auto;
     left: 3%;
     top: 45%;
 }
@@ -53,8 +51,6 @@ header p {
     background-color: #bbada0;
     border-radius: 8px;
     position: relative;
-    left: 18%;
-    top: -5%;
     box-shadow: 5px 5px 3px #888888;
 }
 

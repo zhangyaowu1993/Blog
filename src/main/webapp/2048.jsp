@@ -16,6 +16,7 @@
 </head>
 <body>
     <header>
+        <h1>2048</h1>
         <a id="new_game_button" href="javascript:newgame()">New Game</a>
         <p>Score : <span id="score">0</span></p>
         <div id="container">
