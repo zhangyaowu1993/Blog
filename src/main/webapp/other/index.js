@@ -42,3 +42,51 @@ function getColorByPoint(drag_point) {
     var color = colors[Math.floor(drag_point / 10)];
     return color;
 }
+
+// Clock
+setTimeout("updateClock()", 500);
+
+function updateClock() {
+    var clock = document.getElementById("clock");
+    var date = new Date();
+    var time = (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":" +
+        (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) + ":" +
+        (date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds());
+    clock.innerHTML = time;
+    setTimeout("updateClock()", 500);
+}
+
+// clickHonour
+function clickHonour() {
+    var honour = document.getElementById("honour");
+    $("#honour").hide();
+    honour.innerHTML = "感谢您的点赞";
+    $("#honour").show(300);
+}
+
+// ad_left
+var index_ad_request;
+function clickAd(number) {
+    index_ad_request = new XMLHttpRequest();
+    index_ad_request.open("GET", "responses/index_ad_response.jsp?ad_request=" + number, true);
+    index_ad_request.onreadystatechange = clickAdCallBack;
+    index_ad_request.send();
+
+    if(number <= 10) {
+        document.getElementById("data_frame_img").setAttribute("src", "resources/ad_left_pics/ad_left_pic_" + number + ".jpg");
+    }
+    else {
+        document.getElementById("data_frame_img").setAttribute("src", "resources/ad_left_pics/trans_pic_" + number % 10 + ".png");
+    }
+}
+
+function clickAdCallBack() {
+    if(index_ad_request.readyState == 4) {
+        if(index_ad_request.status == 200) {
+            var paragraph = index_ad_request.responseText;
+            var splited_paragraph = paragraph.split("<split>");
+            document.getElementById("title").innerHTML = splited_paragraph[0];
+            document.getElementById("para").innerHTML = splited_paragraph[1];
+        }
+    }
+}

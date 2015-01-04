@@ -72,6 +72,12 @@
     float: right;
     margin: 20px 5px 3px 5px;
     color: #69a86b;
+
+    -webkit-transition: ease 0.5s;
+    -moz-transition: ease 0.5s;
+    -ms-transition: ease 0.5s;
+    -o-transition: ease 0.5s;
+    transition: ease 0.5s;
 }
 
 .nav_left_process:hover {
@@ -127,24 +133,41 @@
 }
 
 .ad_left ul {
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 .ad_left ul li {
+    display: block;
+    width: 205px;
+    height: 20px;
     list-style: none;
     border-bottom: 1px solid rgba(255, 255, 255, 1);
-    margin: 4px 0px;
+    margin: 1px 0px;
     padding-left: 5px;
 }
 
-.ad_left ul li a {
-    font-size: 14px;
+.recommend_author, .recommend_animation, .recommend_game {
     color: #000000;
+    font-size: 14px;
     text-decoration: none;
+
+    -webkit-transition: ease 0.5s;
+    -moz-transition: ease 0.5s;
+    -ms-transition: ease 0.5s;
+    -o-transition: ease 0.5s;
+    transition: ease 0.5s;
 }
 
-.ad_left ul li a:hover {
-    color: red;
+.recommend_author:hover {
+    color: #f55b00;
+}
+
+.recommend_animation:hover {
+    color: #b528f5;
+}
+
+.recommend_game:hover {
+    color: #f52c77;
 }
 
 .ad_right {
@@ -181,6 +204,12 @@
     background-color: #ffffff;
     padding-left: 4px;
     padding-right: 20px;
+
+    -webkit-transition: ease 0.45s;
+    -moz-transition: ease 0.45s;
+    -ms-transition: ease 0.45s;
+    -o-transition: ease 0.45s;
+    transition: ease 0.45s;
 }
 
 .ad_right ul li input[type=text]:focus {
@@ -311,5 +340,41 @@
     height: 260px;
     margin-top: 3px;
     float: left;
+    background-color: transparent;
+}
+
+#data_frame_pic_container {
+    width: 210px;
+    height: 260px;
+    float: left;
     background-color: rgba(255, 255, 255, 0.6);
+}
+
+#data_frame_pic_container img {
+    width: 202px;
+    height: 252px;
+    margin: 4px;
+}
+
+#title {
+    display: block;
+    width: 400px;
+    text-align: center;
+    margin: 3px auto;
+    font-family: "微软雅黑";
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#data_frame_para_container {
+    width: 787px;
+    height: 260px;
+    margin: 0px 0px 0px 3px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#para {
+    padding: 2px 15px;
+    font-size: 16px;
 }

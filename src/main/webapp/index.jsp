@@ -23,9 +23,9 @@
             <div class="top_bar">
                 <div class="top_bar_hit">
                     <ul>
-                        <li>Time</li>
-                        <li>加入收藏</li>
-                        <li>设为首页</li>
+                        <li id="clock"></li>
+                        <li>元旦快乐</li>
+                        <li>你好 欢迎来到 ZeRur 的主页</li>
                     </ul>
                 </div>
             </div><%--end top_bar--%>
@@ -34,33 +34,33 @@
         <div class="wrap">
             <div class="nav">
                 <div class="nav_left">
-                    <span><a href="#">ZeRur的个人主页</a></span>
+                    <span><a href="#">ZeRurの二次元世界</a></span>
                     <span class="nav_left_process">[Girl Friend] 0.001/1</span>
                     <span class="nav_left_process">[Program Manager] 0.01/1</span>
                     <span class="nav_left_process">[Graduate] 0.8/1</span>
                 </div><%--end nav_left--%>
                 <div class="nav_right">
-                    <span>如果你喜欢本网页 点个<a href="#">赞</a></span>
+                    <span id="honour">如果你喜欢本网页 点个<a href="#" onclick="clickHonour()">赞</a></span>
                 </div><%--end nav_right--%>
             </div><%--end nav--%>
 
 
             <div class="ad_left">
                 <ul>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
-                    <li><a href="#">推荐1</a></li>
+                    <li><a class="recommend_author" href="#" onclick="clickAd(0)">作者の介绍:ZeRur</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(1)">动漫の世界－Angel Beats</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(2)">动漫の世界－花开物语</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(3)">动漫の世界－翠星之加尔刚蒂亚</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(4)">动漫の世界－Love Live</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(5)">动漫の世界－某科学的超电磁炮</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(6)">动漫の世界－刀剑神域</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(7)">动漫の世界－心理测量者</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(8)">动漫の世界－玉子市场</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(9)">动漫の世界－fate/stay night</a></li>
+                    <li><a class="recommend_animation" href="#" onclick="clickAd(10)">动漫の世界－天体的秩序</a></li>
+                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="/2048.jsp" onclick="clickAd(11)">游戏の世界－2048</a></li>
+                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="#" onclick="clickAd(12)">游戏の世界－待填充</a></li>
+                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="#" onclick="clickAd(13)">游戏の世界－待填充</a></li>
                 </ul>
             </div><%--ad_left--%>
 
@@ -106,10 +106,17 @@
 
                 </div><%--end intro_container--%>
             </div><%--end ad_right--%>
-            <div class="data_frame"></div><%--end data_frame--%>
+            <div class="data_frame">
+                <div id="data_frame_pic_container">
+                    <img id="data_frame_img" src="resources/ad_left_pics/ad_left_pic_0.jpg"/>
+                </div>
+                <div id="data_frame_para_container">
+                    <span id="title">作者の介绍:ZeRur</span>
+                    <p id="para">
+                        专注于程序设计，是一个正直的人。
+                    </p>
+                </div><%--end data_frame_para_container--%>
+            </div><%--end data_frame--%>
         </div><%--end wrap--%>
     </body>
 </html>
-
-
-

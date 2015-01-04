@@ -7,7 +7,7 @@ var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
 var canLogMessage = true;
-var req;
+//var req;
 
 $(document).ready(function() {
     newgame();
@@ -215,21 +215,21 @@ function noMove(board) {
 function gameover() {
     if(canLogMessage == true) {
         var name = window.prompt("Game Over 您的纪录是 : " + score + "   请留下你的尊姓大名 :");
-        req = new XMLHttpRequest();
-        req.open("GET", "2048logging.jsp?name=" + name + "&score=" + score, true);
-        req.onreadystatechange = callBack;
-        req.send();
+//        req = new XMLHttpRequest();
+//        req.open("GET", "2048logging.jsp?name=" + name + "&score=" + score, true);
+//        req.onreadystatechange = callBack;
+//        req.send();
     }
     canLogMessage = false;
 }
 
-function callBack() {
-    if(req.readyState == 4) {
-        if(req.status == 200) {
-            var key = req.responseText;
-        }
-    }
-}
+//function callBack() {
+//    if(req.readyState == 4) {
+//        if(req.status == 200) {
+//            var key = req.responseText;
+//        }
+//    }
+//}
 
 function showMoveAnimation(from_x, from_y, to_x, to_y) {
     var this_show_number_cell = $('#number_cell' + from_x + '_' + from_y);

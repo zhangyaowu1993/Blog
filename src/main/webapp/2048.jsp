@@ -19,8 +19,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <body>
 <header>
     <h1>2048</h1>
-    <a id="new_game_button" href="javascript:newgame()">New Game</a>
-    <p>Score : <span id="score">0</span></p>
+    <a id="new_game_button" href="javascript:newgame()">新游戏</a><a id="return_main_page_button" href="index.jsp">回到主页</a>
+    <p>分数: <span id="score">0</span><span id="max_score">最高分: 1000</span></p>
     <div id="container">
         <div id="grid0_0" class="grid"></div>
         <div id="grid0_1" class="grid"></div>

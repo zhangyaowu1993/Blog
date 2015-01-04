@@ -19,9 +19,13 @@ header h1 {
     margin: 10px 0px 0px 0px;
 }
 
+#max_score {
+    margin-left: 30px;
+}
+
 header #new_game_button {
     display: block;
-    margin: 20px auto;
+    margin: 20px 60px;
     width: 100px;
     padding: 10px 10px;
     background-color: #8f7a66;
@@ -29,16 +33,36 @@ header #new_game_button {
     border-radius: 10px;
     color: white;
     text-decoration: none;
+    float: left;
 }
 
 header #new_game_button:hover {
     background-color: #9f8b77;
 }
 
+header #return_main_page_button {
+    display: block;
+    margin: 20px 60px;
+    width: 100px;
+    padding: 10px 10px;
+    background-color: #8f7a66;
+    font-family: Verdana;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    float: right;
+}
+
+header #return_main_page_button:hover {
+    background-color: #9f8b77;
+}
+
+
 header p {
     font-family: Verdana;
     font-size: 22px;
     margin: 20px auto;
+    clear: both;
 }
 
 #container {
