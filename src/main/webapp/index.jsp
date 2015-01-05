@@ -135,7 +135,7 @@
                         <img src="resources/music_button.gif" width="24px" height="16px" />
                     </div>
                     <div id="music_play_pause_button" class="music_play_pause_button" onclick="clickPlayPauseButton()"></div>
-                    <audio src="/resources/article_music/1.mp3" id="myAudio"></audio>
+                    <audio src="/resources/article_music/0.mp3" id="myAudio"></audio>
                     <ul id="music_list_ul">
                         <%--fill with javascript , music_list--%>
                     </ul>

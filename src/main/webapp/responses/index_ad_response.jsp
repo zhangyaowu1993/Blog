@@ -50,8 +50,8 @@
 
     // Music title
     String[] musicName = {
-            "Baby Cruising Love",
             "想在辉夜城起舞",
+            "Baby Cruising Love",
             "珊瑚海",
             "Because Of You",
             "Best Friend",
