@@ -5,10 +5,14 @@
     font-size: 12px;
 }
 
+body {
+    background-color: rgba(176, 176, 176, 0.2);
+}
+
 .top {
     width: 100%;
     height: 20px;
-    background-color: #E8E8E8;
+    background-color: #dbdbdb;
 }
 
 .top_bar {
@@ -35,9 +39,8 @@
 
 .wrap {
     width: 1000px;
-    height: 620px;
     margin: 0px auto;
-    background: url("/resources/background.gif");
+    background: url("/resources/background.jpeg") repeat-y;
     position: relative;
 }
 
@@ -129,7 +132,7 @@
     height: 314px;
     float: left;
     margin-right: 3px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .ad_left ul {
@@ -176,7 +179,7 @@
     height: 145px;
     float: left;
     margin-left: 3px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .ad_right ul li {
@@ -317,7 +320,7 @@
     height: 166px;
     margin-top: 6px;
     float: left;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .intro {
@@ -325,7 +328,7 @@
     height: 70px;
     float: left;
     margin: 6px 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .drag_hit {
@@ -371,10 +374,169 @@
     height: 260px;
     margin: 0px 0px 0px 3px;
     float: left;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #para {
     padding: 2px 15px;
     font-size: 16px;
+}
+
+.video_frame_container {
+    width: 1000px;
+    height: 57px;
+    margin-top: 3px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.video_frame_left {
+    width: 100px;
+    height: 57px;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    line-height: 37px;
+    font-weight: bold;
+    color: #445a80;
+}
+
+.video_frame_right {
+    width: 900px;
+    height: 57px;
+    float: left;
+}
+
+.video_frame_right ul li {
+    list-style: none;
+    display: block;
+    width: 100px;
+    text-align: center;
+    float: left;
+    margin-top: 3px;
+}
+
+.video_frame_right ul li a {
+    text-decoration: none;
+    color: #000000;
+
+    -webkit-transition: ease 0.5s;
+    -moz-transition: ease 0.5s;
+    -ms-transition: ease 0.5s;
+    -o-transition: ease 0.5s;
+    transition: ease 0.5s;
+}
+
+.video_frame_right ul li a:hover {
+    text-decoration: none;
+    color: #f52c77;
+}
+
+.blog_article {
+    width: 1000px;
+    height: 303px;
+    clear: both;
+}
+
+.article_music {
+    width: 297px;
+    height: 300px;
+    margin-top: 3px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.article_music span {
+    display: block;
+    font-size: 20px;
+    width: 150px;
+    height: 27px;
+    font-weight: bold;
+    color: #445a80;
+    padding-left: 10px;
+    float: left;
+}
+
+.music_play_pause_button {
+    width: 17px;
+    height: 17px;
+    float: right;
+    margin: 6px 5px 0px 0px;
+    background: url("/resources/music_play.jpeg");
+}
+
+.music_icon {
+    width: 24px;
+    height: 16px;
+    float: right;
+    margin: 6px 5px 0px 0px;
+    background-color: #e4e4e4;
+    padding: 0px;
+}
+
+.article_music ul li {
+    display: block;
+    width: 287px;
+    height: 20px;
+    margin: 3px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    line-height: 20px;
+    padding-left: 10px;
+    clear: both;
+}
+
+.article_music ul li a {
+    text-decoration: none;
+    color: #b146ff;
+}
+
+.article_note {
+    width: 700px;
+    height: 300px;
+    margin-top: 3px;
+    margin-left: 3px;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.article_note span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #445a80;
+    padding-left: 10px;
+}
+
+.article_note ul li {
+    display: block;
+    width: 690px;
+    height: 43px;
+    margin-top: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-left: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: 20px;
+    background-color: #dbdbdb;
+}
+
+.footer_copyright {
+    width: 1000px;
+    height: 20px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 20px;
+    color: #949494;
+
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+    -ms-transition: ease 1s;
+    -o-transition: ease 1s;
+    transition: ease 1s;
+}
+
+.footer_copyright:hover {
+    color: #6e6e6e;
 }

@@ -47,20 +47,20 @@
 
             <div class="ad_left">
                 <ul>
-                    <li><a class="recommend_author" href="#" onclick="clickAd(0)">作者の介绍:ZeRur</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(1)">动漫の世界－Angel Beats</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(2)">动漫の世界－花开物语</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(3)">动漫の世界－翠星之加尔刚蒂亚</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(4)">动漫の世界－Love Live</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(5)">动漫の世界－某科学的超电磁炮</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(6)">动漫の世界－刀剑神域</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(7)">动漫の世界－心理测量者</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(8)">动漫の世界－玉子市场</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(9)">动漫の世界－fate/stay night</a></li>
-                    <li><a class="recommend_animation" href="#" onclick="clickAd(10)">动漫の世界－天体的秩序</a></li>
+                    <li><a class="recommend_author" href="javascript:void(0)" onclick="clickAd(0)">作者の介绍:ZeRur</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(1)">动漫の世界－Angel Beats</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(2)">动漫の世界－花开物语</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(3)">动漫の世界－翠星之加尔刚蒂亚</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(4)">动漫の世界－Love Live</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(5)">动漫の世界－某科学的超电磁炮</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(6)">动漫の世界－刀剑神域</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(7)">动漫の世界－心理测量者</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(8)">动漫の世界－玉子市场</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(9)">动漫の世界－fate/stay night</a></li>
+                    <li><a class="recommend_animation" href="javascript:void(0)" onclick="clickAd(10)">动漫の世界－天体的秩序</a></li>
                     <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="/2048.jsp" onclick="clickAd(11)">游戏の世界－2048</a></li>
-                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="#" onclick="clickAd(12)">游戏の世界－待填充</a></li>
-                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="#" onclick="clickAd(13)">游戏の世界－待填充</a></li>
+                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="javascript:void(0)" onclick="clickAd(12)">游戏の世界－待填充</a></li>
+                    <li style="border-bottom: 1px solid mediumpurple"><a class="recommend_game" href="javascript:void(0)" onclick="clickAd(13)">游戏の世界－待填充</a></li>
                 </ul>
             </div><%--ad_left--%>
 
@@ -111,12 +111,51 @@
                     <img id="data_frame_img" src="resources/ad_left_pics/ad_left_pic_0.jpg"/>
                 </div>
                 <div id="data_frame_para_container">
-                    <span id="title">作者の介绍:ZeRur</span>
+                    <span id="title">作者の介绍:ZeRur<%--will change by javascript--%></span>
                     <p id="para">
                         专注于程序设计，是一个正直的人。
+                        <%--will change by javascript--%>
                     </p>
                 </div><%--end data_frame_para_container--%>
             </div><%--end data_frame--%>
+
+            <div class="video_frame_container">
+                <div class="video_frame_left">剧集列表</div>
+                <div class="video_frame_right">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div><%--end video_frame--%>
+
+            <div class="blog_article">
+                <div class="article_music">
+                    <span>音乐鉴赏</span>
+                    <div class="music_icon">
+                        <img src="resources/music_button.gif" width="24px" height="16px" />
+                    </div>
+                    <div id="music_play_pause_button" class="music_play_pause_button" onclick="clickPlayPauseButton()"></div>
+                    <audio src="/resources/article_music/1.mp3" id="myAudio"></audio>
+                    <ul id="music_list_ul">
+                        <%--fill with javascript , music_list--%>
+                    </ul>
+                </div><%--end article_music--%>
+                <div class="article_note">
+                    <span>日志</span>
+                    <ul>
+                        <li>Video-1</li>
+                        <li>Video-1</li>
+                        <li>Video-1</li>
+                        <li>Video-1</li>
+                        <li>Video-1</li>
+                        <li>Video-1</li>
+                    </ul>
+                </div><%--end article_note--%><%--TODO--%>
+            </div><%--end blog_article--%>
         </div><%--end wrap--%>
+
+        <div class="footer">
+            <div class="footer_copyright">Designed By ZeRur ©2015</div>
+        </div><%--end footer--%>
     </body>
 </html>

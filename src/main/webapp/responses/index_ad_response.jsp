@@ -47,11 +47,48 @@
             "某日在雾弥湖的上空中出现了谜样的圆盘，一度造成全世界的混乱与恐慌，但飞碟却只停留在空中，并没有进一步的行动。在时间流逝中人们渐渐对这件事失去了兴趣......就在两名少女相遇后，静止的时间再次流动，让众人有所改变的全新故事展开，中学生活最后那一年，将拥有一生无法忘怀的回忆。"
     };
 
+
+    // Music title
+    String[] musicName = {
+            "Baby Cruising Love",
+            "想在辉夜城起舞",
+            "珊瑚海",
+            "Because Of You",
+            "Best Friend",
+            "Mke Up",
+            "雏菊",
+            "ReReハロ~終われそうにない夏~",
+            "不自然なガール",
+            "Jelly",
+            "Maybe",
+            "Flower Of Sorrow"
+    };
+
     // Ajax 返回请求的标题和文本 中间用 <split> 分割
+    // ad_request 表示为 ad<split>ad_request
+    // music_request 表示为 music<split>music_request
     response.setHeader("Cache-Control", "no-store");
+
+    String[] index_request = request.getParameter("ad_request").split("<split>");
     System.out.print("request : ");
-    Integer ad_request = Integer.parseInt(request.getParameter("ad_request"));
-    System.out.println(ad_request);
-    System.out.println(title[ad_request]);
-    response.getWriter().write(title[ad_request] + "<split>" + para[ad_request]);
+    System.out.print(index_request[0]);
+
+    // ad_request
+    if(index_request[0].equals("ad"))
+    {
+        Integer index = Integer.parseInt(index_request[1]);
+        response.getWriter().write(title[index] + "<split>" + para[index]);
+    }
+
+    // music_request
+    if(index_request[0].equals("music"))
+    {
+        StringBuffer music_list = new StringBuffer();
+        for(int i = 0; i < 12; i++)
+        {
+            music_list.append("<li><a href=\"javascript:clickMusicButton(" + i + ")\">" + musicName[i] + "</a></li>");
+        }
+        response.getWriter().write(music_list.toString());
+    }
+
 %>

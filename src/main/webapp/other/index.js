@@ -1,9 +1,15 @@
+// auto load function
+$(document).ready(function() {
+    addVideoList();
+    addMusicList();
+})
+
+
 // myFocus
 myFocus.set({
     id:'picBox',//ID
     pattern:'mF_qiyi'//风格
 });
-
 
 // drag img
 var drag_point = 0;
@@ -59,16 +65,19 @@ function updateClock() {
 // clickHonour
 function clickHonour() {
     var honour = document.getElementById("honour");
-    $("#honour").hide();
-    honour.innerHTML = "感谢您的点赞";
-    $("#honour").show(300);
+    $("#honour").fadeTo(400, 0);
+    setTimeout(function() {
+        honour.innerHTML = "感谢您的点赞";
+        $("#honour").fadeTo(400, 1);
+    }, 400);
+
 }
 
 // ad_left
 var index_ad_request;
 function clickAd(number) {
     index_ad_request = new XMLHttpRequest();
-    index_ad_request.open("GET", "responses/index_ad_response.jsp?ad_request=" + number, true);
+    index_ad_request.open("GET", "responses/index_ad_response.jsp?ad_request=ad<split>" + number, true);
     index_ad_request.onreadystatechange = clickAdCallBack;
     index_ad_request.send();
 
@@ -88,5 +97,65 @@ function clickAdCallBack() {
             document.getElementById("title").innerHTML = splited_paragraph[0];
             document.getElementById("para").innerHTML = splited_paragraph[1];
         }
+    }
+}
+
+// video_frame
+function addVideoList() {
+    for(var i = 1; i < 22; i++) {
+        $(".video_frame_right ul").append('<li><a href="javascript:void(0)">第' + (i < 10 ? "0" + i : i) + '集</a></li>');
+    }
+}
+
+// article_music
+var index_music_request;
+function addMusicList() {
+    index_music_request = new XMLHttpRequest();
+    index_music_request.open("GET", "responses/index_ad_response.jsp?ad_request=music<split>", true);
+    index_music_request.onreadystatechange = addMusicListCallBack;
+    index_music_request.send();
+}
+
+function addMusicListCallBack() {
+    if(index_music_request.readyState == 4) {
+        if(index_music_request.status == 200) {
+            var music_list = index_music_request.responseText;
+            document.getElementById("music_list_ul").innerHTML = music_list;
+        }
+    }
+}
+
+// play sound
+var is_music_playing = false;
+var is_first_click_play_button = true;
+function clickMusicButton(number) {
+    var myAudio = document.getElementById("myAudio");
+    myAudio.setAttribute("src", "/resources/article_music/" + number + ".mp3");
+    myAudio.volume = 0.5;
+    is_music_playing = true;
+    clickPlayPauseButton();
+    myAudio.play();
+}
+
+function clickPlayPauseButton() {
+    var myAudio = document.getElementById("myAudio");
+    myAudio.volume = 0.5;
+
+    if(is_first_click_play_button == true) {
+        document.getElementById("music_play_pause_button").style.background = 'url("/resources/music_pause.jpeg")';
+        myAudio.play();
+        is_first_click_play_button = false;
+        return;
+    }
+
+    if(is_music_playing == true) {
+        document.getElementById("music_play_pause_button").style.background = 'url("/resources/music_pause.jpeg")';
+        is_music_playing = false;
+        myAudio.play();
+    }
+    else {
+        document.getElementById("music_play_pause_button").style.background = 'url("/resources/music_play.jpeg")';
+        is_music_playing = true;
+        myAudio.pause();
     }
 }
