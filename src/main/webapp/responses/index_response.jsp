@@ -6,7 +6,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String[] title = {
+    String[] animation_intro_title = {
             "作者の介绍:ZeRur",
             "动漫の世界－Angel Beats",
             "动漫の世界－花开物语",
@@ -17,10 +17,19 @@
             "动漫の世界－心理测量者",
             "动漫の世界－玉子市场",
             "动漫の世界－fate/stay night",
-            "动漫の世界－天体的秩序"
+            "动漫の世界－天体的秩序",
+            "游戏の世界－2048",
+            "游戏の世界－待填充",
+            "游戏の世界－待填充"
     };
 
-    String[] para = {
+    String[] game_link = {
+            "/2048.jsp",
+            "javascript:void(0)",
+            "javascript:void(0)"
+    };
+
+    String[] animation_intro_text = {
             "专注于程序设计，是一个正直的人。",
             "故事从男主角音无从“死后的世界”醒来开始，认识了一个叫仲村由理的女孩。原来，由理在“死后的世界”率领着一个名为“死后世界战线”，简称“SSS”的组织。“SSS”成立的主要目的是反抗赐予他们生前悲哀命运的神以及神之使者——天使，在天使超乎常理的异能面前，“SSS”只能用枪来反抗。\n" + "主题围绕着“人生”展开，以死后的世界为舞台，讲述了反抗着命运的少男少女们的故事。作品中的“人生哲理”与“战斗要素”（虽然战斗要素是看点，但是战斗并不会让剧中的人物消失，也不会让他们受伤，当剧中的人物完成生前的遗憾后便会解脱，就是所谓的投胎转世，所以作品中心是围绕其对人性的体现）是其精彩看点。",
             "松前绪花，一个一直想要变得和“现在的自己”不一样的16岁的普通女高中生。\n" +
@@ -48,8 +57,8 @@
     };
 
 
-    // Music title
-    String[] musicName = {
+    // Music animation_intro_title
+    String[] music_name = {
             "想在辉夜城起舞",
             "Baby Cruising Love",
             "珊瑚海",
@@ -64,31 +73,63 @@
             "Flower Of Sorrow"
     };
 
+    String[] blog_title_intro = {
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
+            "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。"
+    };
+
     // Ajax 返回请求的标题和文本 中间用 <split> 分割
-    // ad_request 表示为 ad<split>ad_request
-    // music_request 表示为 music<split>music_request
     response.setHeader("Cache-Control", "no-store");
 
-    String[] index_request = request.getParameter("ad_request").split("<split>");
-    System.out.print("request : ");
-    System.out.print(index_request[0]);
+    String[] index_request = request.getParameter("index_request").split("<split>");
 
-    // ad_request
+    // 在页面初始化时 ad_left_init_request 返回 ad_left 中的 innerHTML
+    if(index_request[0].equals("init_ad"))
+    {
+        StringBuffer ad_init_list = new StringBuffer("<li><a class=\"recommend_author\" href=\"javascript:void(0)\" onclick=\"clickAd(0)\">" + animation_intro_title[0] + "</a></li>");
+        for(int i = 1; i < animation_intro_title.length; i++)
+        {
+            if(i > 10)
+            {
+                ad_init_list.append("<li style=\"border-bottom: 1px solid mediumpurple\"><a class=\"recommend_game\" href=\"" + game_link[i - 11] + "\" onclick=\"clickAd(" + i + ")\">" + animation_intro_title[i] + "</a></li>");
+                continue;
+            }
+            ad_init_list.append("<li><a class=\"recommend_animation\" href=\"javascript:void(0)\" onclick=\"clickAd(" + i + ")\">" + animation_intro_title[i] + "</a></li>");
+        }
+        response.getWriter().write(ad_init_list.toString());
+    }
+
+    // 点击 ad_left 的选项时 ad_request 返回要求的文章的题目和内容 中间用 <split> 分割
     if(index_request[0].equals("ad"))
     {
         Integer index = Integer.parseInt(index_request[1]);
-        response.getWriter().write(title[index] + "<split>" + para[index]);
+        response.getWriter().write(animation_intro_title[index] + "<split>" + animation_intro_text[index]);
     }
 
-    // music_request
+    // 页面初始化时 music_request 返回音乐的名字的innerHTML
     if(index_request[0].equals("music"))
     {
         StringBuffer music_list = new StringBuffer();
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < music_name.length; i++)
         {
-            music_list.append("<li><a href=\"javascript:clickMusicButton(" + i + ")\">" + musicName[i] + "</a></li>");
+            music_list.append("<li><a href=\"javascript:clickMusicButton(" + i + ")\">" + music_name[i] + "</a></li>");
         }
         response.getWriter().write(music_list.toString());
     }
 
+    // 页面初始化时 blog_request 返回博客 title introduction 的 innerHTML
+    if(index_request[0].equals("blog"))
+    {
+        StringBuffer blog_list = new StringBuffer();
+        for(int i = 0; i < blog_title_intro.length / 2; i++)
+        {
+            blog_list.append("<li><a href=\"javascript:void(0)\">" + blog_title_intro[i * 2] + "</a><span>" + blog_title_intro[i * 2 + 1] + "</span></li>");
+        }
+        System.out.println(blog_list);
+        response.getWriter().write(blog_list.toString());
+    }
 %>

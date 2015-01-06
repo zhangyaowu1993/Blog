@@ -165,7 +165,7 @@ $(document).keydown(function(event) {
         case 37 : // left
             if(moveLeft()) {
                 $('embed').remove();
-                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed src="/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
@@ -173,7 +173,7 @@ $(document).keydown(function(event) {
         case 38 : // up
             if(moveUp()) {
                 $('embed').remove();
-                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed src="/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
@@ -181,7 +181,7 @@ $(document).keydown(function(event) {
         case 39 : // right
             if(moveRight()) {
                 $('embed').remove();
-                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed src="/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
@@ -189,7 +189,7 @@ $(document).keydown(function(event) {
         case 40 : // down
             if(moveDown()) {
                 $('embed').remove();
-                $('body').append('<embed src="/resources/2048move.mp3" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed src="/2048move.mp3" autostart="true" hidden="true" loop="false">');
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
