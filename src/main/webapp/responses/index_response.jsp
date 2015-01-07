@@ -1,5 +1,5 @@
 <%@ page import="org.json.JSONObject" %>
-<%@ page import="com.ysu.zyw.support.IndexAdRequestJSONFactory" %>
+<%@ page import="com.ysu.zyw.support.IndexRequestJSONFactory" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String[] animation_intro_title_list = {
@@ -139,11 +139,11 @@
         JSONObject responseJSONObject;
         if(request_index < 12)
         {
-            responseJSONObject = IndexAdRequestJSONFactory.getJSONObject(animation_intro_title_list[request_index], animation_intro_text_list[request_index]);
+            responseJSONObject = IndexRequestJSONFactory.getJSONObjectByTitleAndText(animation_intro_title_list[request_index], animation_intro_text_list[request_index]);
         }
         else
         {
-            responseJSONObject = IndexAdRequestJSONFactory.getJSONObject(animation_intro_title_list[request_index], "建设中...");
+            responseJSONObject = IndexRequestJSONFactory.getJSONObjectByTitleAndText(animation_intro_title_list[request_index], "建设中...");
         }
         response.getWriter().write(responseJSONObject.toString());
     }
