@@ -1,9 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zhang_yao_wu1993
-  Date: 14/12/20
-  Time: 下午2:18
---%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,8 +10,8 @@
         <script type="text/javascript" src="other/jquery-2.1.3.js"></script>
         <script type="text/javascript" src="other/index.js"></script>
         <link href="other/index.css" rel="stylesheet" type="text/css"/>
-
     </head>
+
     <body>
         <div class="top">
             <div class="top_bar">
@@ -40,7 +34,7 @@
                     <span class="nav_left_goal">[Graduate] 0.8/1</span>
                 </div><%--end nav_left--%>
                 <div class="nav_right">
-                    <span id="nav_right_like">如果你喜欢本网页 点个<a href="#" onclick="clickLike()">赞</a></span>
+                    <span id="nav_right_like">如果你喜欢本网页 点个<a href="#" id="nav_right_like_href">赞</a></span>
                 </div><%--end nav_right--%>
             </div><%--end nav--%>
 
@@ -84,14 +78,7 @@
                 </form>
 
                 <div class="intro_container">
-                    <div id="drag_hit_id" class="drag_hit">拖动图片到另一个框试试</div>
-                    <div class="intro intro_top_left" ondrop="dropImg(event)" ondragover="allowDrop(event)">
-                        <img id="intro_img1" src="../resources/intro1.jpeg" width="70px" height="70px" style="float: left" draggable="true" ondragstart="dragImg(event)"/>
-                    </div>
-                    <div class="intro intro_top_right" ondrop="dropImg(event)" ondragover="allowDrop(event)"></div>
-                    <div class="intro intro_bottom_left" ondrop="dropImg(event)" ondragover="allowDrop(event)"></div>
-                    <div class="intro intro_bottom_right" ondrop="dropImg(event)" ondragover="allowDrop(event)"></div>
-
+                    <%--TODO--%>
                 </div><%--end intro_container--%>
             </div><%--end ad_right--%>
 
@@ -108,23 +95,14 @@
                 </div><%--end data_frame_para_container--%>
             </div><%--end data_container--%>
 
-            <div class="video_frame_container">
-                <div class="video_frame_left">剧集列表</div>
-                <div class="video_frame_right">
-                    <ul>
-                        <%--fill by javascript--%>
-                    </ul>
-                </div>
-            </div><%--end video_frame_container--%>
-
             <div class="music_blog_container">
                 <div class="music_container">
                     <span>音乐鉴赏</span>
                     <div class="music_icon">
-                        <img src="../resources/music_button.gif" width="24px" height="16px" />
+                        <img src="/resources/music_button.gif" width="24px" height="16px" />
                     </div>
-                    <div id="music_play_pause_button" class="music_play_pause_button" onclick="clickPlayPauseButton()"></div>
-                    <audio src="/resources/article_music/0.mp3" id="myAudio"></audio>
+                    <div id="music_play_pause_button" class="music_play_pause_button"></div>
+                    <audio src="/resources/musics/0.mp3" id="myAudio"></audio>
                     <ul id="music_list_ul">
                         <%--fill with javascript , music_list--%>
                     </ul>
@@ -133,12 +111,7 @@
                 <div class="blog_container">
                     <span>日志</span>
                     <ul id="blog_container_ul">
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
-                        <%--<li><a href="javascript:void(0)">魔兽世界最卑微种族论</a><span>旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。</span></li>--%>
+                        <%--fill by javascript--%>
                     </ul>
                 </div><%--end blog_container--%>
             </div><%--end music_blog_container--%>

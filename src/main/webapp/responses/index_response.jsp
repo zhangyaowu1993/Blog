@@ -1,12 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zhang_yao_wu1993
-  Date: 15/1/3
-  Time: 下午8:48
---%>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="com.ysu.zyw.support.IndexAdRequestJSONFactory" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String[] animation_intro_title = {
+    String[] animation_intro_title_list = {
             "作者の介绍:ZeRur",
             "动漫の世界－Angel Beats",
             "动漫の世界－花开物语",
@@ -23,13 +19,13 @@
             "游戏の世界－待填充"
     };
 
-    String[] game_link = {
+    String[] game_link_list = {
             "/2048.jsp",
             "javascript:void(0)",
             "javascript:void(0)"
     };
 
-    String[] animation_intro_text = {
+    String[] animation_intro_text_list = {
             "专注于程序设计，是一个正直的人。",
             "故事从男主角音无从“死后的世界”醒来开始，认识了一个叫仲村由理的女孩。原来，由理在“死后的世界”率领着一个名为“死后世界战线”，简称“SSS”的组织。“SSS”成立的主要目的是反抗赐予他们生前悲哀命运的神以及神之使者——天使，在天使超乎常理的异能面前，“SSS”只能用枪来反抗。\n" + "主题围绕着“人生”展开，以死后的世界为舞台，讲述了反抗着命运的少男少女们的故事。作品中的“人生哲理”与“战斗要素”（虽然战斗要素是看点，但是战斗并不会让剧中的人物消失，也不会让他们受伤，当剧中的人物完成生前的遗憾后便会解脱，就是所谓的投胎转世，所以作品中心是围绕其对人性的体现）是其精彩看点。",
             "松前绪花，一个一直想要变得和“现在的自己”不一样的16岁的普通女高中生。\n" +
@@ -57,8 +53,8 @@
     };
 
 
-    // Music animation_intro_title
-    String[] music_name = {
+    // Music
+    String[] music_name_list = {
             "想在辉夜城起舞",
             "Baby Cruising Love",
             "珊瑚海",
@@ -73,7 +69,8 @@
             "Flower Of Sorrow"
     };
 
-    String[] blog_title_intro = {
+    // Blog
+    String[] blog_title_intro_list = {
             "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
             "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
             "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。",
@@ -82,54 +79,72 @@
             "魔兽世界最卑微种族论", "旷世经典魔兽世界中最卑微的种族，这一观点由大法师无视帝提出。"
     };
 
-    // Ajax 返回请求的标题和文本 中间用 <split> 分割
+
+
     response.setHeader("Cache-Control", "no-store");
 
-    String[] index_request = request.getParameter("index_request").split("<split>");
+    String index_request = request.getParameter("index_request");
 
-    // 在页面初始化时 ad_left_init_request 返回 ad_left 中的 innerHTML
-    if(index_request[0].equals("init_ad"))
+        /**
+         * 在页面初始化时 返回 ad_left 中的 innerHTML
+         */
+    if(index_request.equals("fill_ad_left"))
     {
-        StringBuffer ad_init_list = new StringBuffer("<li><a class=\"recommend_author\" href=\"javascript:void(0)\" onclick=\"clickAd(0)\">" + animation_intro_title[0] + "</a></li>");
-        for(int i = 1; i < animation_intro_title.length; i++)
+        StringBuffer ad_init_string = new StringBuffer();
+        for(int i = 0; i < animation_intro_title_list.length; i++)
         {
             if(i > 10)
             {
-                ad_init_list.append("<li style=\"border-bottom: 1px solid mediumpurple\"><a class=\"recommend_game\" href=\"" + game_link[i - 11] + "\" onclick=\"clickAd(" + i + ")\">" + animation_intro_title[i] + "</a></li>");
+                ad_init_string.append("<li class=\"recommend_li\"><a class=\"recommend\" href=\"" + game_link_list[i - 11] + "\"  data=\"" + i + "\">" + animation_intro_title_list[i] + "</a></li>");
                 continue;
             }
-            ad_init_list.append("<li><a class=\"recommend_animation\" href=\"javascript:void(0)\" onclick=\"clickAd(" + i + ")\">" + animation_intro_title[i] + "</a></li>");
+            ad_init_string.append("<li><a class=\"recommend\" href=\"javascript:void(0)\" data=\"" + i + "\">" + animation_intro_title_list[i] + "</a></li>");
         }
-        response.getWriter().write(ad_init_list.toString());
+        response.getWriter().write(ad_init_string.toString());
     }
 
-    // 点击 ad_left 的选项时 ad_request 返回要求的文章的题目和内容 中间用 <split> 分割
-    if(index_request[0].equals("ad"))
+        /**
+         * 页面初始化时 返回音乐的名字的 innerHTML
+         */
+    if(index_request.equals("fill_music_container"))
     {
-        Integer index = Integer.parseInt(index_request[1]);
-        response.getWriter().write(animation_intro_title[index] + "<split>" + animation_intro_text[index]);
-    }
-
-    // 页面初始化时 music_request 返回音乐的名字的innerHTML
-    if(index_request[0].equals("music"))
-    {
-        StringBuffer music_list = new StringBuffer();
-        for(int i = 0; i < music_name.length; i++)
+        StringBuffer music_init_string = new StringBuffer();
+        for(int i = 0; i < music_name_list.length; i++)
         {
-            music_list.append("<li><a href=\"javascript:clickMusicButton(" + i + ")\">" + music_name[i] + "</a></li>");
+            music_init_string.append("<li><a href=\"javascript:void(0)\" class=\"music_play\" data=\"" + i + "\">" + music_name_list[i] + "</a></li>");
         }
-        response.getWriter().write(music_list.toString());
+        response.getWriter().write(music_init_string.toString());
     }
 
-    // 页面初始化时 blog_request 返回博客 title introduction 的 innerHTML
-    if(index_request[0].equals("blog"))
+        /**
+         * 页面初始化时 blog_request 返回博客 title introduction 的 innerHTML
+         */
+    if(index_request.equals("fill_blog_container"))
     {
-        StringBuffer blog_list = new StringBuffer();
-        for(int i = 0; i < blog_title_intro.length / 2; i++)
+        StringBuffer blog_init_string = new StringBuffer();
+        for(int i = 0; i < blog_title_intro_list.length / 2; i++)
         {
-            blog_list.append("<li><a href=\"javascript:void(0)\">" + blog_title_intro[i * 2] + "</a><span>" + blog_title_intro[i * 2 + 1] + "</span></li>");
+            blog_init_string.append("<li><a href=\"javascript:void(0)\">" + blog_title_intro_list[i * 2] + "</a><span>" + blog_title_intro_list[i * 2 + 1] + "</span></li>");
         }
-        System.out.println(blog_list);
-        response.getWriter().write(blog_list.toString());
+        response.getWriter().write(blog_init_string.toString());
+    }
+
+    /**
+     * 点击 ad_left 的选项时 返回要求的文章的题目和内容
+     * JSON 格式 {"response_title":"title","response_text":"text"}
+     */
+    if(index_request.equals("click_ad_request"))
+    {
+        Integer request_index = Integer.parseInt(request.getParameter("request_index"));
+        JSONObject responseJSONObject;
+        if(request_index < 12)
+        {
+            responseJSONObject = IndexAdRequestJSONFactory.getJSONObject(animation_intro_title_list[request_index], animation_intro_text_list[request_index]);
+        }
+        else
+        {
+            responseJSONObject = IndexAdRequestJSONFactory.getJSONObject(animation_intro_title_list[request_index], "建设中...");
+        }
+        response.getWriter().write(responseJSONObject.toString());
     }
 %>

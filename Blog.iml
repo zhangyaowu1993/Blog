@@ -11,6 +11,7 @@
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/main/webapp/resources" />
           <root url="file://$MODULE_DIR$/src/main/java" />
         </sourceRoots>
       </configuration>
@@ -38,10 +39,10 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/webapp/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/webapp/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
@@ -92,6 +93,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:servlet-api:6.0.43" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:jsp-api:6.0.43" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:el-api:6.0.43" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20141113" level="project" />
   </component>
 </module>
 

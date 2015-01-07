@@ -1,9 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zhang_yao_wu1993
-  Date: 14/12/20
-  Time: 下午9:48
---%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

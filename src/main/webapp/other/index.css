@@ -9,6 +9,7 @@ body {
     background-color: rgba(176, 176, 176, 0.2);
 }
 
+/********************* TOP ********************/
 .top {
     width: 100%;
     height: 20px;
@@ -37,6 +38,7 @@ body {
     cursor: pointer;
 }
 
+/********************* WRAP ********************/
 .wrap {
     width: 1000px;
     margin: 0px auto;
@@ -44,6 +46,7 @@ body {
     position: relative;
 }
 
+/***** NAV *****/
 .nav {
     width: 100%;
     height: 40px;
@@ -118,14 +121,8 @@ body {
     color: green;
 }
 
-.ad {
-    /*574*314*/
-    width: 560px;
-    height: 300px;
-    overflow: hidden;
-    float: left;
-}
-
+/*************** AD ***************/
+/********** AD_LEFT **********/
 .ad_left {
     /*213*314*/
     width: 210px;
@@ -149,7 +146,7 @@ body {
     padding-left: 5px;
 }
 
-.recommend_author, .recommend_animation, .recommend_game {
+.recommend {
     color: #000000;
     font-size: 14px;
     text-decoration: none;
@@ -161,18 +158,24 @@ body {
     transition: ease 0.5s;
 }
 
-.recommend_author:hover {
+.recommend:hover {
     color: #f55b00;
 }
 
-.recommend_animation:hover {
-    color: #b528f5;
+.recommend_li {
+    border-bottom: 1px solid mediumpurple;
 }
 
-.recommend_game:hover {
-    color: #f52c77;
+/********** AD **********/
+.ad {
+    /*574*314*/
+    width: 560px;
+    height: 300px;
+    overflow: hidden;
+    float: left;
 }
 
+/********** AD_RIGHT **********/
 .ad_right {
     /*213*145*/
     width: 210px;
@@ -314,6 +317,7 @@ body {
     bottom: -2px;
 }
 
+/********** AD_INTRO **********/
 .intro_container {
     /*213*166*/
     width: 210px;
@@ -323,21 +327,7 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.intro {
-    width: 70px;
-    height: 70px;
-    float: left;
-    margin: 6px 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.drag_hit {
-    width: 23px;
-    height: 100%;
-    float: right;
-    text-align: center;
-}
-
+/********** ANIMATION_INTRO **********/
 .animation_intro_container {
     width: 1000px;
     height: 260px;
@@ -382,56 +372,7 @@ body {
     font-size: 16px;
 }
 
-.video_frame_container {
-    width: 1000px;
-    height: 57px;
-    margin-top: 3px;
-    float: left;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.video_frame_left {
-    width: 100px;
-    height: 57px;
-    float: left;
-    font-size: 20px;
-    text-align: center;
-    line-height: 37px;
-    font-weight: bold;
-    color: #445a80;
-}
-
-.video_frame_right {
-    width: 900px;
-    height: 57px;
-    float: left;
-}
-
-.video_frame_right ul li {
-    list-style: none;
-    display: block;
-    width: 100px;
-    text-align: center;
-    float: left;
-    margin-top: 3px;
-}
-
-.video_frame_right ul li a {
-    text-decoration: none;
-    color: #000000;
-
-    -webkit-transition: ease 0.5s;
-    -moz-transition: ease 0.5s;
-    -ms-transition: ease 0.5s;
-    -o-transition: ease 0.5s;
-    transition: ease 0.5s;
-}
-
-.video_frame_right ul li a:hover {
-    text-decoration: none;
-    color: #f52c77;
-}
-
+/********** MUSIC **********/
 .music_blog_container {
     width: 1000px;
     height: 303px;
@@ -495,6 +436,7 @@ body {
     color: #b146ff;
 }
 
+/********** BLOG **********/
 .blog_container {
     width: 700px;
     height: 300px;
@@ -544,6 +486,7 @@ body {
     padding-left: 10px;
 }
 
+/********************* FOOTER ********************/
 .footer {
     width: 100%;
     height: 20px;
