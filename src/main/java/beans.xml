@@ -8,7 +8,7 @@
     <!-- DataSource -->
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/tennis"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/blog?useUnicode=true&amp;characterEncoding=utf-8"/>
         <property name="username" value="root"/>
         <property name="password" value="qunidayede456"/>
 
@@ -23,6 +23,10 @@
 
         <property name="annotatedClasses">
             <list>
+                <value>com.ysu.zyw.service.entity.Diary</value>
+                <value>com.ysu.zyw.service.entity.Comment</value>
+                <value>com.ysu.zyw.service.entity.Essay</value>
+                <value>com.ysu.zyw.service.entity.Ranking</value>
             </list>
         </property>
 
@@ -30,6 +34,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
@@ -48,7 +53,32 @@
     <tx:annotation-driven transaction-manager="txManager"/>
 
     <!-- beans -->
-    <bean id="login" class="com.ysu.zyw.Login" scope="prototype">
+    <bean id="login" class="com.ysu.zyw.Login" scope="prototype"></bean>
+
+    <bean id="diaryDAO" class="com.ysu.zyw.dao.DiaryDAO">
+        <property name="sessionFactory" ref="mySessionFactory"></property>
+    </bean>
+    <bean id="commentDAO" class="com.ysu.zyw.dao.CommentDAO">
+        <property name="sessionFactory" ref="mySessionFactory"></property>
+    </bean>
+    <bean id="essayDAO" class="com.ysu.zyw.dao.EssayDAO">
+        <property name="sessionFactory" ref="mySessionFactory"></property>
+    </bean>
+    <bean id="rankingDAO" class="com.ysu.zyw.dao.RankingDAO">
+        <property name="sessionFactory" ref="mySessionFactory"></property>
+    </bean>
+
+    <bean id="diaryManagement" class="com.ysu.zyw.service.managementlogic.DiaryManagement">
+        <property name="diaryDAO" ref="diaryDAO"></property>
+    </bean>
+    <bean id="commentManagement" class="com.ysu.zyw.service.managementlogic.CommentManagement">
+        <property name="commentDAO" ref="commentDAO"></property>
+    </bean>
+    <bean id="essayManagement" class="com.ysu.zyw.service.managementlogic.EssayManagement">
+        <property name="essayDAO" ref="essayDAO"></property>
+    </bean>
+    <bean id="rankingManagement" class="com.ysu.zyw.service.managementlogic.RankingManagement">
+        <property name="rankingDAO" ref="rankingDAO"></property>
     </bean>
 
 </beans>

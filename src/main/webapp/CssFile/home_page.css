@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+/******************* top_bar_wrap ********************/
+#top_bar_wrap {
+    height: 70px;
+    background-color: black;
+}
+
+#top_bar_nav {
+    width: 1000px;
+    height: 40px;
+    margin: 0px auto;
+    position: relative;
+    top: 15px;
+}
+
+#top_bar_nav table td {
+    display: block;
+    width: 100px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+}
+
+#top_bar_nav table td a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #BDC3C7;
+    transition: ease 0.5s;
+}
+
+#top_bar_nav table td a:hover {
+    color: #ECF0F1;
+}
+
+/******************* body_wrap ********************/
+#body_wrap {
+    background-color: #E8E8E8;
+}
+
+#pic_box_container {
+    width: 1000px;
+    height: 620px;
+    margin: 0px auto;
+}
+
+#picBox {
+    width: 1000px;
+    height: 590px;
+}
+
+/******************* footer_wrap ********************/
+#footer_wrap {
+    height: 140px;
+    background-color: black;
+}
+
+#footer_notice {
+    width: 300px;
+    margin: 0px auto;
+}
+
+.footer_notice_clickable {
+    width: 100px;
+    text-align: center;
+    margin-top: 40px;
+    float: left;
+}
+
+.footer_notice_clickable a {
+    text-decoration: none;
+    color: #7F8C8D;
+    transition: ease 0.5s;
+}
+
+.footer_notice_clickable a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer_notice_unclickable {
+    clear: both;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
