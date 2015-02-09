@@ -174,29 +174,29 @@ function showNumberWithAnimation(i, j, number) {
 $(document).keydown(function(event) {
     switch(event.keyCode) {
         case 37 : // left
+            event.preventDefault();
             if(moveLeft()) {
-                $('embed').remove();
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 38 : // up
+            event.preventDefault();
             if(moveUp()) {
-                $('embed').remove();
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 39 : // right
+            event.preventDefault();
             if(moveRight()) {
-                $('embed').remove();
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
             break;
         case 40 : // down
+            event.preventDefault();
             if(moveDown()) {
-                $('embed').remove();
                 setTimeout("generateOneNumber()", 210);
                 setTimeout("isgameover()", 300);
             }
